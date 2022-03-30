@@ -1,0 +1,35 @@
+[
+	{
+		"name": "DEVELOPER",
+		"permissions": [
+            "CATEGORIES/CREATE",
+            "CATEGORIES/DELETE",
+
+            "EVENTS/CREATE/ALL",
+            "EVENTS/EDIT/ALL",
+            "EVENTS/DELETE/ALL",
+            "EVENTS/CONTRIBUTE",
+
+            "USERS/GET/ALL",
+            "USERS/EDIT/ALL",
+            "USERS/DELETE/ALL",
+
+            "IMAGES/CREATE"
+        ]
+	},
+	{
+		"name": "USER",
+		"permissions": [
+            "EVENTS/CREATE",
+            "EVENTS/EDIT",
+            "EVENTS/DELETE",
+            "EVENTS/CONTRIBUTE",
+
+            "USERS/GET",
+            "USERS/EDIT",
+            "USERS/DELETE",
+
+            "IMAGES/CREATE"
+        ]
+	}
+]

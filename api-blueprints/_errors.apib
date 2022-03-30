@@ -1,0 +1,57 @@
+## ErrorMissingField
+- status: `400`
+- code: `ValidatorError`
+- message: `____ validation failed: Invalid value at ____.`
+
+## ErrorInvalidId
+- status: `400`
+- code: `ErrorInvalidId`
+- message: `Sorry! Invalid id was given.`
+
+## ErrorInvalidLocation
+- status: `400`
+- code: `ErrorInvalidLocation`
+- message: `Sorry! An invalid location object was given.`
+
+## ErrorInvalidCategory
+- status: `400`
+- name: `Error`
+- message: `event validation failed: categories: One or more of the submitted values are not in the category list`
+
+## ErrorHostRequired
+- status: `400`
+- name: `Error`
+- message: `event validation failed: hosts: Events need to have at least one assigned host`
+
+## ErrorInvalidHost
+- status: `404`
+- name: `Error`
+- message: `Sorry! Request ID doesn\'t match claimed host ID`
+
+
+
+## ErrorNotAuthorizedEventChange
+- status: `403`
+- name: `ErrorNotAuthorizedEventChange`
+- message: `Sorry! You are unauthorized to make the requested changes to this event.`
+
+## ErrorNotAuthorizedUserChange
+- status: `403`
+- name: `ErrorNotAuthorizedUserChange`
+- message: `Sorry! You are unauthorized to make the requested changes to this user.`
+
+
+## ErrorCategoryDoesNotExist
+- status: `404`
+- name: `ErrorCategoryDoesNotExist`
+- message: `Sorry! The category id _____ does not exist`
+
+## ErrorEventDoesNotExist
+- status: `404`
+- name: `ErrorEventDoesNotExist`
+- message: `Sorry! The event with id _____ does not exist`
+
+## ErrorUserDoesNotExist
+- status: `404`
+- name: `ErrorUserDoesNotExist`
+- message: `Sorry! The user with id _____ does not exist`

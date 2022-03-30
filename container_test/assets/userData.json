@@ -1,0 +1,147 @@
+[
+	{
+		"_id": { "$oid": "ffffffffffffffffffff0001" },
+		"role": "DEVELOPER",
+		"firstName": "test",
+		"lastName": "user",
+		"email": "vibevent@vibevent.co",
+		"username": "ad2969",
+		"profilePhoto": {
+			"url": "https://picsum.photos/id/237/300/300"
+		},
+		"eventsCreated": [
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0001" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0002" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0003" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0004" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0005" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0006" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0007" }
+		],
+		"eventsInvolved": [],
+		"eventsSaved": [
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0001" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0002" },
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee0003" }
+		],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0002" },
+		"role": "USER",
+		"firstName": "Chou",
+		"lastName": "Tzu-yu",
+		"email": "cty@jyp.com",
+		"username": "chout",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0003" },
+		"role": "USER",
+		"firstName": "Mina",
+		"lastName": "Myōi",
+		"email": "penguinmina@jyp.com",
+		"username": "penguinmina",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0004" },
+		"role": "USER",
+		"firstName": "Son",
+		"lastName": "Chae-young",
+		"email": "schae@jyp.com",
+		"username": "schae",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0005" },
+		"role": "USER",
+		"firstName": "Momo",
+		"lastName": "Hirai",
+		"email": "momoh@jyp.com",
+		"username": "momoh",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0006" },
+		"role": "USER",
+		"firstName": "Im",
+		"lastName": "Nayeon",
+		"email": "imbaby@jyp.com",
+		"username": "imbaby",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0007" },
+		"role": "USER",
+		"firstName": "Kim",
+		"lastName": "Dahyun",
+		"email": "tofudahyun@jyp.com",
+		"username": "tofudahyun",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0008" },
+		"role": "USER",
+		"firstName": "Sana",
+		"lastName": "Minatozaki",
+		"email": "sanam@jyp.com",
+		"username": "sanam",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0009" },
+		"role": "USER",
+		"firstName": "Park",
+		"lastName": "Jihyo",
+		"email": "godjihyo@jyp.com",
+		"username": "godjihyo",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+        "_id": { "$oid": "ffffffffffffffffffff0010" },
+		"role": "USER",
+		"firstName": "Yoo",
+		"lastName": "Jeong-yeon",
+		"email": "momjy@jyp.com",
+		"username": "momjy",
+		"eventsCreated": [],
+		"eventsInvolved": [],
+		"eventsSaved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	}
+]

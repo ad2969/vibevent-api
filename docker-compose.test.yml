@@ -1,0 +1,35 @@
+version: "2"    # https://docs.docker.com/compose/compose-file/compose-versioning/
+services:
+  api:  # local api container
+    build: ./
+    image: event_discovery_api_local  # use the local api image
+    ports:
+      - "3200:3200" # use a specific port 3200 for the api tests
+    volumes:
+      - .:/app  # prevent rebuilds
+      - ./.logs/npm:/root/.npm/_logs
+    environment:
+      - NODE_ENV=test
+      - SERVER_PORT=3200  # use the specific port mapping
+      - MONGO_PORT=27017
+      - MONGO_CONTAINER=db
+      - MONGO_DB=event-discovery-api
+    links:
+      - db 
+  test: # test container
+    env_file:
+      - ./container_test/.env.test
+    environment:
+      WAIT_HOSTS: db:27017, api:3200  # wait for api & mongo to load before running tests
+    build: ./container_test # use test folder for build directory (+Dockerfile)
+    volumes:
+      - ./container_test:/test
+      - ./api-blueprints:/api-blueprints  # share api-blueprints folder
+    depends_on:
+      - api   # link test container to the api to make calls
+      - db    # link test container to the database for 
+    links:
+      - api
+      - db
+  db:   # local database
+    image: mongo  # don't prevent mongo logging

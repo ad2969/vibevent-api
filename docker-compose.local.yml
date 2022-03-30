@@ -1,0 +1,33 @@
+version: "2"    # https://docs.docker.com/compose/compose-file/compose-versioning/
+services:   # for local environment, we also run a local mongodb container
+  api:
+    container_name: event_discovery_api_local   # specify with "_local" key
+    restart: always   # set to restart in the case of crashing
+    build: ./   # use root for build directory
+    image: event_discovery_api_local    # create a different image than deployment
+    command: npm start    # overwrite command to use nodemon instead
+    ports:
+      - "3000:3000"   # default port 3000
+    volumes:
+      - .:/app    # allow hot-reloading
+      - ./.logs/npm:/root/.npm/_logs    # allow viewing error logs
+    env_file:
+      - ./.env.default  # use the default environment variables
+    environment:    # overwrite what is in the dotenv file
+      - NODE_ENV=local
+      - MONGO_CONTAINER=mongodb
+      - MONGO_DB=event-discovery-api
+    links:
+      - mongo   # link api to the mongo container
+  mongo:
+    container_name: mongodb
+    image: mongo    # use docker's official mongodb image
+    ports:
+      - "27017:27017"   # default mongo ports
+    volumes:
+      - ./.mongo:/etc/mongodb   # allow shared volume for mongo config
+      - ./.db:/var/lib/mongodb    # allow shared volume for data in the mongo database
+      - ./.logs:/var/log/mongodb    # allow shared volume for mongo logs
+    command: mongod --config /etc/mongodb/mongod.conf   # use the specific mongo config
+    logging:
+      driver: none    # prevent the mongo container from logging into console

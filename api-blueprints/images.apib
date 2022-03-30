@@ -1,0 +1,61 @@
+# Group Images
+
+## Images Collection [/images]
+Collection of images.
+
+### Request a pre-signed URL [POST]
+
+Receives an array of image details (bucketName and bucketKey) that we need uploads for.
+The endpoint returns an array of objects which include the pre-signed url.
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketName: `vibevent-image-prod` (string)
+            + contentType: `image/jpeg` (string)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketKey: `user-profiles/` (string)
+            + contentType: `image/jpeg` (string)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketName: `vibevent-image-prod` (string)
+            + bucketKey: `user-profiles/` (string)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketName: `vibevent-image-prod` (string)
+            + bucketKey: `user-profiles/` (string)
+            + contentType: `image/jpeg` (string)
+
++ Response 201 (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + url: `https://bucket-name.s3-us-west-2.amazonaws.com/file-name.pdf?AWSAccessKeyId=[access-key-omitted]&Expires=1470666057&Signature=[signature-omitted]` (string)
+            + Bucket: `vibevent-image-prod` (string)
+            + Key: `user-profiles/` (string)
+            + expires: 1000 (number)
+            + ACL: `public-read` (string)
+            + ContentType: `image/jpeg` (string)

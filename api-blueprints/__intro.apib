@@ -1,0 +1,16 @@
+# Event Discovery API
+
+These documents provide documentation of our API's endpoints and how to use them.
+
+The API Blueprints are made to be tested with Dredd, and logged on Apiary.
+Dredd Testing Reference: https://dredd.readthedocs.io/en/latest/how-to-guides.html
+
+<h3><strong>Important note about IDs</strong></h3>
+
+For IDs, its important that notation meant to be replaced by hooks would normally take the form
+`aaaaaaaaaaaaaaaaaaaaaaaa` (or other early alphabets),
+
+while invalid notation that is meant to cause errors will take the forms:
+- `000000000000000000000000` (for valid id, but to throw a 'not found'), and
+- `xxxxxxxxxxxxxxxxxxxxxxxx` (for invalid mongo id),
+

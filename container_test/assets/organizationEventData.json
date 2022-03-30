@@ -1,0 +1,51 @@
+[
+    {
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee2001" },
+		"hosts": [
+			{ "$oid": "ffffffffffffffffffff1001" },
+			{ "$oid": "ffffffffffffffffffff2001" }
+		],
+		"name": "UBC SISA Sauder First Year Conference",
+		"startDate": "2020-07-16T04:00:00.000Z",
+		"endDate": "2020-07-16T06:00:00.000Z",
+		"venue": {
+			"name": "Virtual"
+		},
+		"price": 0,
+		"description": "Are you an incoming Sauder student? <br /> Have questions regarding courses and professors? <br /> Want tips on how to excel in COMM 101 or COMM 290? <br /> Worried that virtual classes will make it harder for you to make new friends in university? <br /> We’ve all been there (except it wasn’t online :D), so Sauder International Student Association (SISA) wants to help you as much as we can! Check out our event Sauder 101 and all of your questions and worries will be answered! <br /><br /> **Location:** Vibevent - SISA will be partnering with this platform to bring out this amazing event for you - more details to follow. <br /> **Time:** July 15th, 2020, 9 PM PST <br /><br /> We are so excited to welcome you to Sauder - SISA is here so do not fear!",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["BIZ"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://www.instagram.com/ubcsisa/?hl=en"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://onlinker-image-prod.s3.amazonaws.com/marketing.png"},
+			"hostPhotos": [
+				{ "url": "https://onlinker-image-prod.s3.amazonaws.com/sisa.jpeg" },
+				{ "url": "https://onlinker-image-prod.s3.amazonaws.com/marketing2.png" }
+			],
+			"userPhotos": [
+				{ "url": "https://i.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I" }
+			]
+		},
+		"tags": {
+			"hostTags": ["online", "first year", "technology"],
+			"userTags": ["sisa", "conference"]
+		},
+		"rooms": [
+			{
+				"type": "livewebinar",
+				"url": "800-813-535",
+				"name": "LIVE Room"
+			}
+		],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	}
+]

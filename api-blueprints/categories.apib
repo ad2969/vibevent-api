@@ -1,0 +1,46 @@
+# Group Categories
+
+## Categories [/categories]
+A dynamic list of event categories.
+
+By default, categories will be stored and key-ed in the categories table by their name. For convenience, all strings stored in this table will be lowercase strings - all demanded transformation should be done in the front end application.
+
+
+### Add a category [POST]
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + categoryName: `I am A category     ` (string, required)
+        + categoryKey: `IAAC     ` (string, required)
+
++ Response 201 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + categoryKey: `IAAC` (string)
+
+
+### List all the categories [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `IAAC`: `i am a category` (string)
+        + `IANC`: `i am another category` (string)
+
+
+### Delete a category [DELETE /categories/{categoryKey}]
+
++ Parameters
+
+    + categoryKey: `IAAC` (required, string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 404
+
+    + Attributes (ErrorCategoryDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
++ Response 204

@@ -1,0 +1,20 @@
+{
+  "name": "container-test",
+  "version": "1.0.0",
+  "description": "container to conduct API tests",
+  "scripts": {
+    "pretest": "chmod +x ./run.sh",
+    "test": "./run.sh",
+    "prestart": "./compile_blueprints.sh",
+    "start": "./run_tests.sh"
+  },
+  "private": true,
+  "author": "@ad2969",
+  "dependencies": {
+    "dredd": "^13.0.2",
+    "hooks": "^0.3.2",
+    "jwt-simple": "^0.5.6",
+    "mongodb": "^3.5.8",
+    "remove": "^0.1.5"
+  }
+}

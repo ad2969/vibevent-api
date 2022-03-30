@@ -1,0 +1,280 @@
+[
+	{
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee0001" },
+		"hosts": [{ "$oid": "ffffffffffffffffffff0001" }],
+		"name": "VIBEVENT",
+		"startDate": "2020-09-09T06:00:00.000Z",
+		"endDate": "2020-09-01T09:00:00.000Z",
+		"venue": {
+			"name": "UBC"
+		},
+		"price": 0,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["BIZ"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://vibevent.co"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://picsum.photos/id/870/500/300?grayscale" },
+			"hostPhotos": [
+				{ "url": "https://picsum.photos/id/341/500/300" },
+				{ "url": "https://picsum.photos/id/954/500/300?grayscale" }
+			],
+			"userPhotos": [
+				{ "url": "https://picsum.photos/id/687/500/300" },
+				{ "url": "https://picsum.photos/id/257/500/300" }
+			]
+		},
+		"tags": {
+			"hostTags": [],
+			"userTags": ["new", "experience"]
+		},
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee0002" },
+		"hosts": [{ "$oid": "ffffffffffffffffffff0001" }],
+		"name": "Digital Marketing for Dummies",
+		"startDate": "2019-06-10T06:00:00.000Z",
+		"endDate": "2019-06-10T09:00:00.000Z",
+		"venue": {
+			"name": "UBC"
+		},
+		"price": 0,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["BIZ"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://neilpatel.com/what-is-digital-marketing/"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://i.picsum.photos/id/1048/5616/3744.jpg?hmac=N5TZKe4gtmf4hU8xRs-zbS4diYiO009Jni7n50609zk" },
+			"hostPhotos": [
+				{ "url": "https://i.picsum.photos/id/1078/3000/2000.jpg?hmac=kI-4ittyvRAG5-z9urHPPBQ4kDNJ4ItiEw6-NagOy10" },
+				{ "url": "https://i.picsum.photos/id/1033/2048/1365.jpg?hmac=zEuPfX7t6U866nzXjWF41bf-uxkKOnf1dDrHXmhcK-Q" }
+			]
+		},
+		"tags": {
+			"hostTags": ["2 host images", "online experience", "marketing", "technology"],
+			"userTags": ["ubcma", "dummy", "beginner"]
+		},
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee0003" },
+		"hosts": [{ "$oid": "ffffffffffffffffffff0001" }],
+		"name": "Cinema 4D In Depth | MAXON Crash Courses",
+		"startDate": "2020-06-22T19:00:00.000Z",
+		"endDate": "2020-06-23T01:00:00.000Z",
+		"venue": {
+			"name": "UBC"
+		},
+		"price": 10,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum auctor ut commodo tempor venenatis porttitor volutpat ac eu. Interdum vitae vulputate cursus viverra proin luctus varius consectetur. Commodo mi proin nunc, aliquet tincidunt risus enim pellentesque at. Commodo non risus senectus accumsan, morbi condimentum tellus. Euismod at viverra tempor fringilla.",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["BIZ", "ENT", "HOB", "SCI"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://www.maxon.net/en-us/products/cinema-4d/overview/"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://i.picsum.photos/id/1042/3456/5184.jpg?hmac=5xr8Veg2D_kEQQO6rvGj_Yk8s_N4iq3-eZ9_KclSXNQ" },
+			"hostPhotos": [
+				{ "url": "https://i.picsum.photos/id/1079/4496/3000.jpg?hmac=G-dJcpU08vEMqjUz2rb3IxjOG99rcePqW9BF1IsPLf0" }
+			],
+			"userPhotos": [
+				{ "url": "https://i.picsum.photos/id/250/4928/3264.jpg?hmac=4oIwzXlpK4KU3wySTnATICCa4H6xwbSGifrxv7GafWU" },
+				{ "url": "https://i.picsum.photos/id/220/3872/2416.jpg?hmac=IpdtOEIfyokMoTZnxVYPTnmDjctAytLTcGi2-BPsv-M" }
+			]
+		},
+		"tags": {
+			"hostTags": ["1 host image", "2 user images", "online experience", "creative", "technology"],
+			"userTags": ["animation", "cinema"]
+		},
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee0004" },
+		"hosts": [{ "$oid": "ffffffffffffffffffff0001" }],
+		"name": "How Realistic is Watch Dogs Hacking?",
+		"startDate": "2020-06-14T19:00:00.000Z",
+		"endDate": "2020-06-14T22:00:00.000Z",
+		"venue": {
+			"name": "Vancouver Hackspace",
+			"location": {
+				"type": "Point",
+				"coordinates": [-123.125, 49.279]
+			}
+		},
+		"price": 0,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum auctor ut commodo tempor venenatis porttitor volutpat ac eu. Interdum vitae vulputate cursus viverra proin luctus varius consectetur. Commodo mi proin nunc, aliquet tincidunt risus enim pellentesque at. Commodo non risus senectus accumsan, morbi condimentum tellus. Euismod at viverra tempor fringilla.",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["EDU", "HOB", "SCI"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://en.wikipedia.org/wiki/Watch_Dogs"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" },
+			"hostPhotos": [
+				{ "url": "https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" },
+				{ "url": "https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" },
+				{ "url": "https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" },
+				{ "url": "https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU" }
+			]
+		},
+		"tags": {
+			"hostTags": ["3 host images", "game", "ethical hacking", "technology"],
+			"userTags": ["learn to hack", "educational"]
+		},
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee0005" },
+		"hosts": [{ "$oid": "ffffffffffffffffffff0001" }],
+		"name": "GameDevs BTS: Gris with Nomada Studios",
+		"startDate": "2020-06-14T13:00:00.000Z",
+		"endDate": "2020-06-14T15:00:00.000Z",
+		"venue": {
+			"name": "UBC Gaming Studio"
+		},
+		"price": 0,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum auctor ut commodo tempor venenatis porttitor volutpat ac eu. Interdum vitae vulputate cursus viverra proin luctus varius consectetur. Commodo mi proin nunc, aliquet tincidunt risus enim pellentesque at. Commodo non risus senectus accumsan, morbi condimentum tellus. Euismod at viverra tempor fringilla.",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["EDU", "HOB", "SCI"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://nomada.studio/"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://i.picsum.photos/id/304/6016/4000.jpg?hmac=ULWayz92dKMWLEZviIJkgLRd6J5FClakkDq_3VmXbw0" },
+			"hostPhotos": [
+				{ "url": "https://i.picsum.photos/id/180/2400/1600.jpg?hmac=Ig-CXcpNdmh51k3kXpNqNqcDYTwXCIaonYiBOnLXBb8" },
+				{ "url": "https://i.picsum.photos/id/274/3824/2520.jpg?hmac=OOl_w8LX_psogyruUe1z986AuqeS_TY7rLxAFgG4wrc" },
+				{ "url": "https://i.picsum.photos/id/180/2400/1600.jpg?hmac=Ig-CXcpNdmh51k3kXpNqNqcDYTwXCIaonYiBOnLXBb8" }
+			],
+			"userPhotos": [
+				{ "url": "https://i.picsum.photos/id/2/5616/3744.jpg?hmac=l1XcSPFigtRLcO2F6Li-t17EIeylkWH94Oowb4vzApk" }
+			]
+		},
+		"tags": {
+			"hostTags": ["3 host images", "1 user image", "game", "gris"],
+			"userTags": ["steam", "industry"]
+		},
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee0006" },
+		"hosts": [{ "$oid": "ffffffffffffffffffff0001" }],
+		"name": "Hackathon 4 Noobs",
+		"startDate": "2020-04-18T14:06:23.291Z",
+		"endDate": "2020-04-19T14:06:23.291Z",
+		"venue": {
+			"name": "UBC Life Building",
+			"location": {
+				"type": "Point",
+				"coordinates": [-123.174100, 49.255580]
+			}
+		},
+		"price": 0,
+		"description": "A hackathon, also known as a codefest, is a social coding event that brings computer programmers and other interested people together to improve upon or build a new software program. The word hackathon is a portmanteau of the words hacker, which means clever programmer, and marathon, an event marked by endurance",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["ENT", "BIZ", "HOB", "FAM", "SCI", "EDU"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://hackathon.guide/"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://miro.medium.com/max/3200/1*supQ92uykNElEfyYf7UgHw.png"},
+			"hostPhotos": [
+				{ "url": "https://www.rasmussen.edu/-/media/images/blogs/402_sotwe_9242015.jpg?la=en&hash=7FF9AA8F39093AB72DEA67CC5815829F25851CC7" },
+				{ "url": "https://idsb.tmgrup.com.tr/ly/uploads/images/2020/03/08/24114.jpg" },
+				{ "url": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2013/09/hackathon-730x276.jpg" }
+			]
+		},
+		"tags": {
+			"hostTags": ["3 host images", "social", "haks"],
+			"userTags": ["space", "security", "software"]
+		},
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	},
+	{
+		"_id": { "$oid": "eeeeeeeeeeeeeeeeeeee0007" },
+		"hosts": [{ "$oid": "ffffffffffffffffffff0001" }],
+		"name": "Event Under Construction",
+		"startDate": "2020-04-18T14:06:23.291Z",
+		"endDate": "2020-04-19T14:06:23.291Z",
+		"venue": {
+			"name": "VIBEVENT HQ",
+			"location": {
+				"type": "Point",
+				"coordinates": [-123.174100, 49.255580]
+			}
+		},
+		"price": 0,
+		"description": "I am VIBEVENT's <br/> **incomplete** event <br/> ### LOOK FORWARD TO MORE UPDATES!",
+		"rating": {
+			"sum": 0,
+			"count": 0
+		},
+		"categories": ["SCI", "HOB", "EDU"],
+		"links": [
+			{
+				"name": "ticket",
+				"url": "https://www.vibevent.co/"
+			}
+		],
+		"media": {
+			"coverPhoto": { "url": "https://picsum.photos/id/355/5340/3588"},
+			"hostPhotos": [],
+			"userPhotos": [
+				{ "url": "https://picsum.photos/id/351/3994/2443" }
+			]
+		},
+		"tags": {
+			"hostTags": ["1 user image"],
+			"userTags": ["unfinished", "template", "hooo"]
+		},
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	}
+]

@@ -1,0 +1,19 @@
+[
+	{
+        "_id": { "$oid": "ffffffffffffffffffff2001" },
+		"role": "HOST",
+		"firstName": "UBC SISA",
+		"description": "Sauder International Student Association (SISA) is a CUS service which provides students in the Sauder community to meet each other and learn from each other’s culture. SISA’s mission is to bring students from diverse backgrounds together and establish an open-arms community for those that may be feeling a lil’ bit homesick. We proudly open our events to ALL students, whether you’re domestic or international!",
+		"email": "sisa@vibevent.co",
+		"username": "ubcsisa",
+		"profilePhoto": {
+			"url": " https://onlinker-image-prod.s3.amazonaws.com/sisa.jpeg "
+		},
+		"eventsCreated": [
+			{ "$oid": "eeeeeeeeeeeeeeeeeeee2001" }
+		],
+		"eventsInvolved": [],
+		"createdAt": { "$date": { "$numberLong": "1593942762000" } },
+		"updatedAt": { "$date": { "$numberLong": "1593942762000" } }
+	}
+]

@@ -1,0 +1,11 @@
+version: "2"    # https://docs.docker.com/compose/compose-file/compose-versioning/
+services:
+  api:    # Spins up only the api because "stage" will connect to remote Mongo DB
+    container_name: event_discovery_api_stage   # specify with "_stage" key
+    restart: always   # enable continous restart in the case the container crashes
+    build: ./   # build directory takes root, minus everything in .dockerignore
+    image: event_discovery_api    # create the docker image
+    ports:
+      - "3000:3000"   # maps exposed port 3000 to what is running in container's 3000
+    env_file:
+      - ./.env.stage  # use the default environment variables

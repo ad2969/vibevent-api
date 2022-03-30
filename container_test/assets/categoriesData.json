@@ -1,0 +1,107 @@
+[
+	{
+		"_id": "cccccccccccccccccccc0001",
+		"name": "auto, boat, & air",
+		"key": "ABA"
+	},
+	{
+		"_id": "cccccccccccccccccccc0002",
+		"name": "business & professional",
+		"key": "BIZ"
+	},
+	{
+		"_id": "cccccccccccccccccccc0003",
+		"name": "charity & causes",
+		"key": "CHA"
+	},
+	{
+		"_id": "cccccccccccccccccccc0004",
+		"name": "community & culture",
+		"key": "COM"
+	},
+	{
+		"_id": "cccccccccccccccccccc0005",
+		"name": "family",
+		"key": "FAM"
+	},
+	{
+		"_id": "cccccccccccccccccccc0006",
+		"name": "education",
+		"key": "EDU"
+	},
+	{
+		"_id": "cccccccccccccccccccc0007",
+		"name": "fashion & beauty",
+		"key": "FAS"
+	},
+	{
+		"_id": "cccccccccccccccccccc0008",
+		"name": "film, media, & entertainment",
+		"key": "ENT"
+	},
+	{
+		"_id": "cccccccccccccccccccc0009",
+		"name": "food & beverages",
+		"key": "FNB"
+	},
+	{
+		"_id": "cccccccccccccccccccc0010",
+		"name": "government & politics",
+		"key": "GOV"
+	},
+	{
+		"_id": "cccccccccccccccccccc0011",
+		"name": "health & wellness",
+		"key": "HEL"
+	},
+	{
+		"_id": "cccccccccccccccccccc0012",
+		"name": "hobbies & special interest",
+		"key": "HOB"
+	},
+	{
+		"_id": "cccccccccccccccccccc0013",
+		"name": "home & lifestyle",
+		"key": "HOM"
+	},
+	{
+		"_id": "cccccccccccccccccccc0014",
+		"name": "music",
+		"key": "MUS"
+	},
+	{
+		"_id": "cccccccccccccccccccc0015",
+		"name": "other",
+		"key": "OTH"
+	},
+	{
+		"_id": "cccccccccccccccccccc0016",
+		"name": "performing & visual arts",
+		"key": "PERF"
+	},
+	{
+		"_id": "cccccccccccccccccccc0017",
+		"name": "religion & spirituality",
+		"key": "REL"
+	},
+	{
+		"_id": "cccccccccccccccccccc0018",
+		"name": "science & technology",
+		"key": "SCI"
+	},
+	{
+		"_id": "cccccccccccccccccccc0019",
+		"name": "seasonal & holiday",
+		"key": "HOL"
+	},
+	{
+		"_id": "cccccccccccccccccccc0020",
+		"name": "sports & fitness",
+		"key": "FIT"
+	},
+	{
+		"_id": "cccccccccccccccccccc0021",
+		"name": "travel & outdoor",
+		"key": "OUT"
+	}
+]

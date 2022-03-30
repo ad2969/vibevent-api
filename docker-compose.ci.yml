@@ -1,0 +1,5 @@
+# this file is used to override the 'docker-compose.test.yml' during ci testing
+services:
+  api:
+    environment:
+      - LOGS=true # allow logging

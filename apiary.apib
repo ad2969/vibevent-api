@@ -1,0 +1,949 @@
+# Event Discovery API
+
+These documents provide documentation of our API's endpoints and how to use them.
+
+The API Blueprints are made to be tested with Dredd, and logged on Apiary.
+Dredd Testing Reference: https://dredd.readthedocs.io/en/latest/how-to-guides.html
+
+<h3><strong>Important note about IDs</strong></h3>
+
+For IDs, its important that notation meant to be replaced by hooks would normally take the form
+`aaaaaaaaaaaaaaaaaaaaaaaa` (or other early alphabets),
+
+while invalid notation that is meant to cause errors will take the forms:
+- `000000000000000000000000` (for valid id, but to throw a 'not found'), and
+- `xxxxxxxxxxxxxxxxxxxxxxxx` (for invalid mongo id),
+
+# Data Structures
+
+## Image
+- url: `https://images.unsplash.com/i-am-a-photo` (string)
+- size
+    - width: 100 (number)
+    - height: 100 (number)
+
+
+## Point
+- coordinates (array)
+    - `-123.100761` (number)
+    - `49.280659` (number)
+- type: `Point` (string)
+
+## Location
+- name: `I am a location` (string)
+- location (Point)
+
+
+## User
+- _id: `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+- _createdAt: `2020-05-01T14:00:00.000Z` (string)
+- _updatedAt: `2020-05-01T14:00:00.000Z` (string)
+- firstName: `I am a user` (string)
+- lastName: `last name` (string)
+- email: `randomuser@randomdomain.com` (string)
+- username: `random_user123` (string)
+
+## UserRequest100
++ firstName: `I am a new user` (string)
++ lastName: `last name` (string)
++ email: `randomuser@randomdomain.com` (string)
++ username: `random_user123` (string)
+
+## UserRequest101
++ email: `noname@noname.com` (string)
+
+## UserRequest200
++ firstName: `I am a newer user` (string)
++ lastName: `with last name` (string)
++ email: `rando@randomdomain.com` (string)
+
+## UserRequest201
++ firstName: `I am a patched` (string)
++ lastName: `user` (string)
++ email: `odnar@domainrandom.com` (string)
+
+
+## Event
+- _id: `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+- _createdAt: `2020-05-01T14:00:00.000Z` (string)
+- _updatedAt: `2020-05-01T14:00:00.000Z` (string)
+- hosts (array)
+    - `5e880d3208b2ba001a08d82e` (string)
+- name: `I am an event` (string)
+- startDate: `2020-05-01T14:00:00.000Z` (string)
+- endDate: `2020-05-01T14:00:00.000Z` (string)
+- venue (Location)
+- price: 100 (number)
+- description: `I am the event's description.` (string)
+- rating (object)
+    - sum: 3.55 (number)
+    - count: 1000 (number)
+- categories (array)
+    - `MUS` (string)
+    - `OTH` (string)
+- links (array)
+    - (object)
+        - name: `ticket` (string)
+        - url: `https://fortunesoundclub.com/sup-fu-saturdays/` (string)
+- media
+    - coverPhoto (Image)
+    - hostPhotos (array)
+        - (Image)
+    - userPhotos (array)
+        - (Image)
+- tags
+    - hostTags (array)
+        - `hip hop` (string)
+        - `festival` (string)
+    - userTags (array)
+        - `drinks` (string)
+        - `social` (string)
+
+## EventRequest100
++ hosts (array)
+    + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
++ name: `I am an event` (string)
++ startDate: `2020-05-01T14:00:00.000Z` (string)
++ endDate: `2020-05-01T14:00:00.000Z` (string)
++ venue (Location)
++ price: 100 (number)
++ description: `I am the event's description.` (string)
++ categories (array)
+    + `MUS` (string)
++ links (array)
+    + (object)
+        + name: `ticket` (string)
+        + url: `https://fortunesoundclub.com/sup-fu-saturdays/` (string)
++ coverPhoto (Image)
++ media (array)
+    + (Image)
++ tags (array)
+    + `hip hop` (string)
+    + `festival` (string)
+
+## EventRequest101
++ price: 100 (number)
++ description: `I am the event's description.` (string)
++ links (array)
+    + (object)
+        + name: `ticket` (string)
+        + url: `https://fortunesoundclub.com/sup-fu-saturdays/` (string)
++ coverPhoto (Image)
++ media (array)
+    + (Image)
++ tags (array)
+    + `hip hop` (string)
+    + `festival` (string)
+
+## EventRequest102
++ hosts (array)
+    + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
++ name: `I am an event` (string)
++ startDate: `2020-05-01T14:00:00.000Z` (string)
++ endDate: `2020-05-01T14:00:00.000Z` (string)
++ venue (Location)
++ price: 100 (number)
++ description: `I am the event's description.` (string)
++ categories (array)
+    + `000000000000000000000000` (string)
++ links (array)
+    + (object)
+        + name: `ticket` (string)
+        + url: `https://fortunesoundclub.com/sup-fu-saturdays/` (string)
++ coverPhoto (Image)
++ media (array)
+    + (Image)
++ tags (array)
+    + `hip hop` (string)
+    + `festival` (string)
+
+## EventRequest103
++ hosts (array)
++ name: `I am an event` (string)
++ startDate: `2020-05-01T14:00:00.000Z` (string)
++ endDate: `2020-05-01T14:00:00.000Z` (string)
++ venue (Location)
++ price: 100 (number)
++ description: `I am the event's description.` (string)
++ categories (array)
+    + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
++ links (array)
+    + (object)
+        + name: `ticket` (string)
+        + url: `https://fortunesoundclub.com/sup-fu-saturdays/` (string)
++ coverPhoto (Image)
++ media (array)
+    + (Image)
++ tags (array)
+    + `hip hop` (string)
+    + `festival` (string)
+
+## EventRequest104
++ hosts (array)
+    + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
++ name: `I am an event` (string)
++ startDate: `2020-05-01T14:00:00.000Z` (string)
++ endDate: `2020-05-01T14:00:00.000Z` (string)
++ venue (Location)
++ price: 100 (number)
++ description: `I am the event's description.` (string)
++ categories (array)
+    + `MUS` (string)
++ links (array)
+    + (object)
+        + name: `ticket` (string)
+        + url: `https://fortunesoundclub.com/sup-fu-saturdays/` (string)
++ coverPhoto (Image)
++ media (array)
+    + (Image)
++ tags (array)
+    + `hip hop` (string)
+    + `festival` (string)
+
+## EventRequest200
++ hosts (array)
+    + `000000000000000000000000` (string)
++ name: `I am an updated event`
++ startDate: `2020-05-01T14:00:00.000Z` (string)
++ endDate: `2020-05-01T14:00:00.000Z` (string)
++ venue (Location)
++ price: 299 (number)
++ description: `Updated Description.` (string)
++ rating (object)
+    + sum: 3.55 (number)
+    + count: 1000 (number)
++ categories (array)
+    + `MUS` (string)
++ links (array)
+    + (object)
+        + name: `ticket` (string)
+        + url: `https://fortunesoundclub.com/sup-fo-sundays/` (string)
++ media
+    + coverPhoto (Image)
+    + hostPhotos (array)
+        + (Image)
++ tags (array)
+    + hostTags (array)
+        + `family` (string)
+    + userTags (array)
+        + 'user' (string)
+
+## EventRequest201
++ name: `I am a patched event`
++ startDate: `2020-05-01T14:00:00.000Z` (string)
++ endDate: `2020-05-01T14:00:00.000Z` (string)
++ venue (Location)
++ price: 299 (number)
++ description: `Patched Description.` (string)
++ rating (object)
+    + sum: 3.55 (number)
+    + count: 1000 (number)
++ categories (array)
+    + `OTH` (string)
++ links (array)
+    + (object)
+        + name: `ticket` (string)
+        + url: `https://fortunesoundclub.com/sup-fi-sundays/` (string)
++ media (array)
+    + (Image)
++ tags (array)
+    + `fun` (string)
+    + `friends` (string)
+
+## ErrorMissingField
+- status: `400`
+- code: `ValidatorError`
+- message: `____ validation failed: Invalid value at ____.`
+
+## ErrorInvalidId
+- status: `400`
+- code: `ErrorInvalidId`
+- message: `Sorry! Invalid id was given.`
+
+## ErrorInvalidLocation
+- status: `400`
+- code: `ErrorInvalidLocation`
+- message: `Sorry! An invalid location object was given.`
+
+## ErrorInvalidCategory
+- status: `400`
+- name: `Error`
+- message: `event validation failed: categories: One or more of the submitted values are not in the category list`
+
+## ErrorHostRequired
+- status: `400`
+- name: `Error`
+- message: `event validation failed: hosts: Events need to have at least one assigned host`
+
+## ErrorInvalidHost
+- status: `404`
+- name: `Error`
+- message: `Sorry! Request ID doesn\'t match claimed host ID`
+
+
+
+## ErrorNotAuthorizedEventChange
+- status: `403`
+- name: `ErrorNotAuthorizedEventChange`
+- message: `Sorry! You are unauthorized to make the requested changes to this event.`
+
+## ErrorNotAuthorizedUserChange
+- status: `403`
+- name: `ErrorNotAuthorizedUserChange`
+- message: `Sorry! You are unauthorized to make the requested changes to this user.`
+
+
+## ErrorCategoryDoesNotExist
+- status: `404`
+- name: `ErrorCategoryDoesNotExist`
+- message: `Sorry! The category id _____ does not exist`
+
+## ErrorEventDoesNotExist
+- status: `404`
+- name: `ErrorEventDoesNotExist`
+- message: `Sorry! The event with id _____ does not exist`
+
+## ErrorUserDoesNotExist
+- status: `404`
+- name: `ErrorUserDoesNotExist`
+- message: `Sorry! The user with id _____ does not exist`# Group Health
+
+## Healthcheck [GET /health]
+
+Dredd will use the endpoint to conduct authentication tests
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + uptime: `10` (number)
+        + message: `OK` (string)
+        + timestamp: `1591776404231` (number)
+
++ Response 503 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + uptime: `10` (number)
+        + error: `error` (string)
+        + timestamp: `1591776404231` (number)
+
+## Authcheck [GET /health/auth]
+
+Dredd will use the endpoint to conduct authentication tests
+
++ Request (application/json; charset=utf-8)
+
++ Response 401 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + name: `AuthorizationHeaderError` (string)
+        + message: `Request is missing or includes an invalid Authorization header.` (string)
+        + status: `401` (number)
+        + date: `Wed Jun 10 2020 01:17:40 GMT-0700 (Pacific Daylight Time)` (string)
+        + stack: `Error in ...` (string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 401 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + name: `AuthorizationHeaderError` (string)
+        + message: `Request includes an invalid Authorization header.` (string)
+        + status: `401` (number)
+        + date: `Wed Jun 10 2020 01:17:40 GMT-0700 (Pacific Daylight Time)` (string)
+        + stack: `Error in ...` (string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 401 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + name: `AuthorizationHeaderError` (string)
+        + message: `Authorization header contains an invalid JWT token.` (string)
+        + status: `401` (number)
+        + date: `Wed Jun 10 2020 01:17:40 GMT-0700 (Pacific Daylight Time)` (string)
+        + stack: `Error in ...` (string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + uptime: `10` (number)
+        + message: `OK` (string)
+        + timestamp: `1591776404231` (number)
+
++ Response 503 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + uptime: `10` (number)
+        + error: `error` (string)
+        + timestamp: `1591776404231` (number)
+# Group Categories
+
+## Categories [/categories]
+A dynamic list of event categories.
+
+By default, categories will be stored and key-ed in the categories table by their name. For convenience, all strings stored in this table will be lowercase strings - all demanded transformation should be done in the front end application.
+
+
+### Add a category [POST]
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + categoryName: `I am A category     ` (string, required)
+        + categoryKey: `IAAC     ` (string, required)
+
++ Response 201 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + categoryKey: `IAAC` (string)
+
+
+### List all the categories [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `IAAC`: `i am a category` (string)
+        + `IANC`: `i am another category` (string)
+
+
+### Delete a category [DELETE /categories/{categoryKey}]
+
++ Parameters
+
+    + categoryKey: `IAAC` (required, string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 404
+
+    + Attributes (ErrorCategoryDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
++ Response 204
+# Group Events
+
+## Events Collection [/events]
+Collection of events.
+
+### Create a new event [POST]
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest101)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest102)
+
++ Response 400
+
+    + Attributes (ErrorInvalidCategory)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest103)
+
++ Response 400
+
+    + Attributes (ErrorHostRequired)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest104)
+
++ Response 403
+
+    + Attributes (ErrorInvalidHost)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest100)
+
++ Response 201 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + eventId: `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+
+
+### List all the events [GET /events{?withHosts}{?name}{?results}{?radius}{?coordinates}]
+
++ Parameters
+
+    + withHosts: `true` (boolean) - Whether to include host details
+    + name: `` (string) - Name of the event (uses similarity check)
+    + results: 10 (number) - Number of events to retrieve
+    + coordinates: `-123.100761,49.280659` (string) - CSV string of coordinates (lng, lat)
+    + radius: 1000 (number) - Radius surrounding the given coordinates (in meters), requires coordinates to be specified
+
++ Request (application/json; charset=utf-8)
+
++ Response 400
+
+    + Attributes (ErrorInvalidLocation)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (Event)
+
+
+### Find specific event(s) [GET /events/{eventIds}{?withHosts}]
+    
++ Parameters
+
+    + eventIds: `aaaaaaaaaaaaaaaaaaaaaaaa,bbbbbbbbbbbbbbbbbbbbbbbb` (required, string) - CSV string of ids
+    + withHosts: `true` (boolean) - Whether to include host details
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (Event)
+        + `bbbbbbbbbbbbbbbbbbbbbbbb` (Event)
+
+
+### Set an event [PUT /events/{eventId}]
+
+Without the proper authorization, the user cannot make any PUT changes.
+
+The "hosts" field of an event cannot be altered through this endpoint
+
++ Parameters
+
+    + eventId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest200)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedEventChange)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest200)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (EventRequest200)
+
++ Response 204
+
+
+### Delete an event [DELETE /events/{eventId}]
+
+Without the proper authorization, the user will not be able to delete the event
+
++ Parameters
+
+    + eventId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedEventChange)
+
++ Request (application/json; charset=utf-8)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
++ Response 204
+
+
+## Functions [/events/{eventId}/function]
+Collection of specific functions relating to events.
+
+### Check Event User Authorized [GET /events/{eventId}/user/authorized]
+
+This endpoint checks whether the user is authorized in to make changes to the event
+
+The event is described by the eventId, and information on the user is obtained automatically from the Authorization header
+
++ Parameters
+
+    + eventId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + authorized: false (boolean)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + authorized: true (boolean)
+
+
+## Partial Updates [/events/{eventId}]
+
+### Update event host [PATCH /events/{eventId}/host]
+
+This endpoint ensures that, when adding a host, both the user and event collections are updated.
+
++ Parameters
+
+    + eventId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `hosts` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedEventChange)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `hosts` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `hosts` (array)
+            + `000000000000000000000000` (required, string)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `hosts` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 204
+
+
+### Contribute event rating [PATCH /events/{eventId}/rate]
+
+This endpoint allows users to add their own rating to events. The total final rating will be computed before pushing to the tables.
+
++ Parameters
+
+    + eventId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `userId`: `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `userId`: `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+        + `rating`: 3 (required, number)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `userId`: `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+        + `rating`: 3 (required, number)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `userId`: `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+        + `rating`: 3 (required, number)
+
++ Response 204
+# Group Images
+
+## Images Collection [/images]
+Collection of images.
+
+### Request a pre-signed URL [POST]
+
+Receives an array of image details (bucketName and bucketKey) that we need uploads for.
+The endpoint returns an array of objects which include the pre-signed url.
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketName: `vibevent-image-prod` (string)
+            + contentType: `image/jpeg` (string)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketKey: `user-profiles/` (string)
+            + contentType: `image/jpeg` (string)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketName: `vibevent-image-prod` (string)
+            + bucketKey: `user-profiles/` (string)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + bucketName: `vibevent-image-prod` (string)
+            + bucketKey: `user-profiles/` (string)
+            + contentType: `image/jpeg` (string)
+
++ Response 201 (application/json; charset=utf-8)
+
+    + Attributes (array)
+        + (object)
+            + url: `https://bucket-name.s3-us-west-2.amazonaws.com/file-name.pdf?AWSAccessKeyId=[access-key-omitted]&Expires=1470666057&Signature=[signature-omitted]` (string)
+            + Bucket: `vibevent-image-prod` (string)
+            + Key: `user-profiles/` (string)
+            + expires: 1000 (number)
+            + ACL: `public-read` (string)
+            + ContentType: `image/jpeg` (string)
+# Group Users
+
+## Users Collection [/users]
+Collection of users.
+
+### Create a new user [POST]
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest101)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest100)
+
++ Response 201 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+
+
+### List all the users [GET /users{?withEvents}{?name}{?results}]
+
++ Parameters
+
+    + withEvents: `false` (boolean)
+    + name: `` (string)
+    + results: 10 (number)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (User)
+            + eventsInvolved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa1` (string)
+            + eventsCreated (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa2` (string)
+            + eventsSaved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa3` (string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (User)
+            + eventsInvolved (array)
+                + (Event)
+            + eventsCreated (array)
+                + (Event)
+            + eventsSaved (array)
+                + (Event)
+
+
+### Find specific user(s) [GET /users/{userIds}{?withEvents}]
+
++ Parameters
+
+    + userIds: `aaaaaaaaaaaaaaaaaaaaaaaa,bbbbbbbbbbbbbbbbbbbbbbbb` (required, string) - CSV string of ids
+    + withEvents: `true` (boolean)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (User)
+            + eventsInvolved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa1` (string)
+            + eventsCreated (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa2` (string)
+            + eventsSaved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa3` (string)
+
+
+### Set a user [PUT /users/{userId}]
+
++ Parameters
+    + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedUserChange)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+        + eventsCreated (array)
+            + `000000000000000000000000` (string)
+        + eventsInvolved (array)
+            + `000000000000000000000000` (string)
+        + eventsSaved (array)
+            + `000000000000000000000000` (string)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+        + eventsCreated (array)
+            + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+        + eventsInvolved (array)
+            + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+        + eventsSaved (array)
+            + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+
++ Response 204
+
+
+### Delete a user [DELETE /users/{userId}]
+
++ Parameters
+    + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedUserChange)
+
++ Request (application/json; charset=utf-8)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
++ Response 204
+
+
+## Partial Updates [/users/{userId}]
+
+### Update user saved events [PATCH /users/{userId}/events_saved]
+
++ Parameters
+
+    + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedUserChange)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 204

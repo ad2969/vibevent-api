@@ -1,0 +1,194 @@
+# Group Users
+
+## Users Collection [/users]
+Collection of users.
+
+### Create a new user [POST]
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest101)
+
++ Response 400
+
+    + Attributes (ErrorMissingField)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest100)
+
++ Response 201 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+
+
+### List all the users [GET /users{?withEvents}{?name}{?results}]
+
++ Parameters
+
+    + withEvents: `false` (boolean)
+    + name: `` (string)
+    + results: 10 (number)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (User)
+            + eventsInvolved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa1` (string)
+            + eventsCreated (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa2` (string)
+            + eventsSaved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa3` (string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (User)
+            + eventsInvolved (array)
+                + (Event)
+            + eventsCreated (array)
+                + (Event)
+            + eventsSaved (array)
+                + (Event)
+
+
+### Find specific user(s) [GET /users/{userIds}{?withEvents}]
+
++ Parameters
+
+    + userIds: `aaaaaaaaaaaaaaaaaaaaaaaa,bbbbbbbbbbbbbbbbbbbbbbbb` (required, string) - CSV string of ids
+    + withEvents: `true` (boolean)
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `aaaaaaaaaaaaaaaaaaaaaaaa` (User)
+            + eventsInvolved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa1` (string)
+            + eventsCreated (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa2` (string)
+            + eventsSaved (array)
+                + `aaaaaaaaaaaaaaaaaaaaaaa3` (string)
+
+
+### Set a user [PUT /users/{userId}]
+
++ Parameters
+    + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedUserChange)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+        + eventsCreated (array)
+            + `000000000000000000000000` (string)
+        + eventsInvolved (array)
+            + `000000000000000000000000` (string)
+        + eventsSaved (array)
+            + `000000000000000000000000` (string)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (UserRequest200)
+        + eventsCreated (array)
+            + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+        + eventsInvolved (array)
+            + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+        + eventsSaved (array)
+            + `aaaaaaaaaaaaaaaaaaaaaaaa` (string)
+
++ Response 204
+
+
+### Delete a user [DELETE /users/{userId}]
+
++ Parameters
+    + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedUserChange)
+
++ Request (application/json; charset=utf-8)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
++ Response 204
+
+
+## Partial Updates [/users/{userId}]
+
+### Update user saved events [PATCH /users/{userId}/events_saved]
+
++ Parameters
+
+    + userId: `aaaaaaaaaaaaaaaaaaaaaaaa` (required, string)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 403
+
+    + Attributes (ErrorNotAuthorizedUserChange)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 404
+
+    + Attributes (ErrorUserDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 404
+
+    + Attributes (ErrorEventDoesNotExist)
+
++ Request (application/json; charset=utf-8)
+
+    + Attributes (object)
+        + `eventsSaved` (array)
+            + `bbbbbbbbbbbbbbbbbbbbbbbb` (required, string)
+
++ Response 204
